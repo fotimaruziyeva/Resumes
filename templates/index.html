@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<header class="header">
+	<div class="head-top">
+
+		<!-- menu button -->
+		<a href="#" class="menu-btn"><span></span></a>
+
+		<!-- logo -->
+		<div class="logo hover-masks-logo">
+			<a href="{% static 'cv\Fotima-Ruziyeva-FlowCV-Resume-20240907 (3).pdf'%}">
+				<span class="mask-lnk">Ruziyeva <strong>  Fotima</strong></span>
+				<span class="mask-lnk mask-lnk-hover">Download <strong>CV</strong></span>
+			</a>
+		</div>
+		
+		<!-- top menu -->						
+		<div class="top-menu hover-masks">
+			<div class="top-menu-nav">	
+				<div class="menu-topmenu-container">
+					<ul class="menu">
+						<li class="menu-item  current-menu-item">
+							<a href="{% url 'home-page'%}">Home</a>
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'resume-page'%}">Resume</a>
+							
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'works-page'%}">Works</a>
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'contact-page'%}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</header>
+		
+		<!-- Wrapper -->
+		<div class="wrapper">	
+
+			<!-- Section Started -->
+			<div class="section started" id="section-started">
+
+				<!-- background -->
+				<div class="video-bg">
+					<div class="video-bg-mask"></div>
+					<div class="video-bg-texture" id="grained_container"></div>
+				</div>
+
+				<!-- started content -->
+				<div class="centrize full-width">
+					<div class="vertical-center">
+						<div class="started-content">
+							<h1 class="h-title">
+								Hello, I’m <strong>Ruziyeva Fotima</strong>, <br />
+								Front-end  and Back-end Developer .
+							</h1>
+							<div class="h-subtitle typing-subtitle">
+								<p>I code cool <strong>websites</strong></p>
+								<p>I develop <strong>websites</strong></p>
+								<p>I love <strong>web programming</strong></p>
+							</div>
+							<span class="typed-subtitle"></span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		
+ {% endblock content %}

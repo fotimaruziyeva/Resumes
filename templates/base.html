@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="description" content="CV & Resume Template" />
+    <meta
+      name="keywords"
+      content="vcard, resposnive, resume, personal, card, cv, cvio, portfolio"
+    />
+    <meta name="author" content="beshleyua" />
+
+    <title>Resume</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;display=swap&amp;subset=cyrillic"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/min-styles.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/brands.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/solid.css'%}" />
+
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/favicons/favicon.ico'%}"
+    />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-125314689-11"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-125314689-11");
+    </script>
+  </head>
+
+  <body class="home">
+    <div class="preloader">
+      <div class="centrize full-width">
+        <div class="vertical-center">
+          <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="container">
+     
+      <div class="cursor-follower"></div>
+
+    
+
+      {% block content %} {% endblock content %}
+
+      <footer class="footer">
+        <div class="copy">
+          <p>E: fotimabeautiful04@gmail.com</p>
+          <p>T:+998 93 078 85 88</p>
+        </div>
+        <div class="soc-box">
+          <div class="follow-label">Follow Me</div>
+          <div class="soc">
+            <a target="_blank" href="https://www.instagram.com/ogab.ek9675/">
+              <span class="icon fab fa-instagram"></span>
+            </a>
+            <a target="_blank" href="https://dribbble.com/Fotima_008">
+              <span class="icon fab fa-dribbble"></span>
+            </a>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </footer>
+      <div class="lines">
+        <div class="line-col"></div>
+        <div class="line-col"></div>
+        <div class="line-col"></div>
+        <div class="line-col"></div>
+        <div class="line-col"></div>
+      </div>
+    </div>
+
+    <script src="{% static 'js/min.scripts.js'%}"></script>
+    <script src="{% static 'js/demo-bar.js'%}"></script>
+    <div class="bsl-popup" data-theme="cvio" data-category="html">
+      <div class="bsl-popup__buttons"></div>
+      <div class="bsl-popup__content bsl-popup__content-related">
+        <div class="bsl-popup__menu"></div>
+        <div class="bsl-popup__tabs">
+          <div class="bsl-popup__tab bsl-popup__tab-demo"></div>
+          <div class="bsl-popup__tab bsl-popup__tab-all"></div>
+          <div class="bsl-popup__tab bsl-popup__tab-related"></div>
+          <div class="bsl-popup__tab bsl-popup__tab-version"></div>
+        </div>
+      </div>
+      <div class="bsl-popup__content bsl-popup__content-help"></div>
+    </div>
+    <!-- bslthemes.com buttons html end -->
+  </body>
+
+  <!-- Mirrored from bslthemes.com/html/cvio/works.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Aug 2024 04:37:15 GMT -->
+</html>

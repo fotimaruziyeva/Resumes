@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<header class="header">
+	<div class="head-top">
+
+		<!-- menu button -->
+		<a href="#" class="menu-btn"><span></span></a>
+
+		<!-- logo -->
+		<div class="logo hover-masks-logo">
+			<a href="{% static 'cv\Fotima-Ruziyeva-FlowCV-Resume-20240907 (3).pdf'%}">
+				<span class="mask-lnk">Ruziyeva <strong>  Fotima</strong></span>
+				<span class="mask-lnk mask-lnk-hover">Download <strong>CV</strong></span>
+			</a>
+		</div>
+		
+		<!-- top menu -->						
+		<div class="top-menu hover-masks">
+			<div class="top-menu-nav">	
+				<div class="menu-topmenu-container">
+					<ul class="menu">
+						<li class="menu-item">
+							<a href="{% url 'home-page'%}">Home</a>
+						</li>
+						<li class="menu-item">
+							<a href="{% url 'resume-page'%}">Resume</a>
+							
+						</li>
+						<li class="menu-item current-menu-item">
+							<a href="#">Works</a>
+						</li>
+						<li class="menu-item">
+							<a href="{% url 'contact-page'%}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</header>
+		<!-- Wrapper -->
+		<div class="wrapper">	
+
+			<!-- Section Started -->
+			<div class="section started section-title" id="section-started">
+
+				<!-- background -->
+				<div class="video-bg">
+					<div class="video-bg-mask"></div>
+					<div class="video-bg-texture" id="grained_container"></div>
+				</div>
+
+				<!-- started content -->
+				<div class="centrize full-width">
+					<div class="vertical-center">
+						<div class="started-content">
+							<h1 class="h-title">Works</h1>
+							<div class="h-subtitles">
+								<div class="h-subtitle typing-bread">
+									<p class="breadcrumbs">
+										<a href="index.html">Home</a> / Works
+									</p>
+								</div>
+								<span class="typed-bread"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- mosue button -->
+				<a href="#" class="mouse_btn" style="display: none;"><span class="icon fas fa-chevron-down"></span></a>
+
+			</div>
+
+			<!-- Works -->
+			<div class="section works" id="section-portfolio">
+				<div class="content">
+				
+					<!-- portfolio filter -->
+					
+					<div class="filter-menu content-box">
+						<div class="filters">
+							{% for category in category_list %}
+							<div class="btn-group">
+								<label data-text="All" class="glitch-effect">
+								<input type="radio" name="" value=".box-item" />{{category.name}}</label>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				
+					
+					
+					<!-- portfolio items -->
+					<div class="box-items portfolio-items">
+
+						<div class="box-item f-gallery">
+							{% for work_list in work_list %}
+							<div class="image">
+								<a href="#gallery-1" class="has-popup-gallery hover-animated">
+									<img src="{{work_list.image.url}}" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-images"></span>
+												<span class="desc">
+													<span class="name" style="color:white;">{{work_list.title| safe | truncatewords:10 }}</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+								<div id="gallery-1" class="mfp-hide">
+									<a href="{{work_list.image.url}}"></a>
+									<p>{{work_list.description}}</p>
+									<a href="{{work_list.image.url}}"></a>
+									<a href="{{work_list.image.url}}"></a>
+									<a href="{{work_list.image.url}}"></a>
+								</div>	
+							</div>
+							{% endfor %}
+						</div>
+
+						<div class="box-item f-links"> <!-- add class "animate-to-page" if need animated transition to page and delete target="_blank" -->
+							<div class="image">
+								<a href="https://google.com/" class="has-popup-link hover-animated" target="_blank">
+									<img src="images/work3.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-link"></span>
+												<span class="desc">
+													<span class="category">Links</span>
+													<span class="name">Nike Red</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>	
+							</div>
+						</div>
+
+						<div class="box-item f-video">
+							<div class="image">
+								<a href="https://youtu.be/S4L8T2kFFck" class="has-popup-video hover-animated">
+									<img src="images/work2.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-video"></span>
+												<span class="desc">
+													<span class="category">Video</span>
+													<span class="name">Fertility of Some Plants</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="box-item f-image">
+							<div class="image">
+								<a href="images/work4.jpg" class="has-popup-image hover-animated">
+									<img src="images/work4.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-image"></span>
+												<span class="desc">
+													<span class="category">Image</span>
+													<span class="name">Inspiration in Cap Haitian</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="box-item f-image">
+							<div class="image">
+								<a href="images/work7.jpg" class="has-popup-image hover-animated">
+									<img src="images/work7.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-image"></span>
+												<span class="desc">
+													<span class="category">Image</span>
+													<span class="name">Water and Shore</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="box-item f-music">
+							<div class="image">
+								<a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F221650664&amp;show_artwork=true" class="has-popup-music hover-animated">
+									<img src="images/work6.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-music"></span>
+												<span class="desc">
+													<span class="category">Music</span>
+													<span class="name">Dark Bike</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+						</div>
+
+						<div class="box-item f-gallery">
+							<div class="image">
+								<a href="#gallery-2" class="has-popup-gallery hover-animated">
+									<img src="images/work5.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-images"></span>
+												<span class="desc">
+													<span class="category">Gallery</span>
+													<span class="name">Undulating Space</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+								<div id="gallery-2" class="mfp-hide">
+									<a href="images/work5.jpg"></a>
+									<a href="images/work1.jpg"></a>
+									<a href="images/work2.jpg"></a>
+									<a href="images/work3.jpg"></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="box-item f-content">
+							<div class="image">
+								<a href="#popup-1" class="has-popup-media hover-animated">
+									<img src="images/work8.jpg" class="wp-post-image" alt="" />
+									<span class="info circle">
+										<span class="centrize full-width">
+											<span class="vertical-center">
+												<span class="icon fas fa-plus"></span>
+												<span class="desc">
+													<span class="category">Content</span>
+													<span class="name">Curved Ceiling Ribs</span>
+												</span>
+											</span>
+										</span>
+									</span>
+								</a>
+							</div>
+							<div id="popup-1" class="popup-box mfp-fade mfp-hide">
+								<div class="content">
+									<div class="image" style="background-image: url(images/work8.jpg);"></div>
+									<div class="desc single-post-text">
+										<div class="category">Content</div>
+										<h4>Hand holding pyramid painting</h4>
+										<p>
+											Now there is more fashion. There is no so-called trends. Now chase after anything not necessary — nor for fashionable color nor the shape, nor for style. Think about the content that you want to invest in a created object, and only then will form. The thing is your spirit. A spirit unlike forms hard copy.
+										</p>
+										<ul>
+											<li>Now there is more fashion. There is no so-called trends.</li>
+											<li>Now chase after anything not necessary — nor for fashionable color nor the shape, nor for style.</li>
+											<li>Think about the content that you want to invest in a created object, and only then will form.</li>
+											<li>The thing is your spirit. A spirit unlike forms hard copy.</li>
+										</ul>
+										<p>
+											Now there is more fashion. There is no so-called trends. Now chase after anything not necessary — nor for fashionable color nor the shape, nor for style. Think about the content that you want to invest in a created object, and only then will form. The thing is your spirit. A spirit unlike forms hard copy.
+										</p>
+										<a href="works_single_1.html" class="btn hover-animated">
+											<span class="circle"></span>
+											<span class="lnk">View Project</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>	
+
+		</div>
+		
+		{% endblock content %}

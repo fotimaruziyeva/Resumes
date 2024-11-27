@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<header class="header">
+	<div class="head-top">
+
+		<!-- menu button -->
+		<a href="#" class="menu-btn"><span></span></a>
+
+		<!-- logo -->
+		<div class="logo hover-masks-logo">
+			<a href="{% static 'cv\Fotima-Ruziyeva-FlowCV-Resume-20240907 (3).pdf'%}">
+				<span class="mask-lnk">Ruziyeva <strong>  Fotima</strong></span>
+				<span class="mask-lnk mask-lnk-hover">Download <strong>CV</strong></span>
+			</a>
+		</div>
+		
+		<!-- top menu -->						
+		<div class="top-menu hover-masks">
+			<div class="top-menu-nav">	
+				<div class="menu-topmenu-container">
+					<ul class="menu">
+						<li class="menu-item ">
+							<a href="{% url 'home-page'%}">Home</a>
+						</li>
+						<li class="menu-item  current-menu-item">
+							<a href="#">Resume</a>
+							
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'works-page'%}">Works</a>
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'contact-page'%}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</header>
+		<!-- Wrapper -->
+		<div class="wrapper">
+
+			<!-- Section Started -->
+			<div class="section started section-title" id="section-started">
+
+				<!-- background -->
+				<div class="video-bg">
+					<div class="video-bg-mask"></div>
+					<div class="video-bg-texture" id="grained_container"></div>
+				</div>
+
+				<!-- started content -->
+				<div class="centrize full-width">
+					<div class="vertical-center">
+						<div class="started-content">
+							<h1 class="h-title">Resume</h1>
+							<div class="h-subtitles">
+								<div class="h-subtitle typing-bread">
+									<p class="breadcrumbs">
+										<a href="{% url 'home-page'%}">Home</a> / Resume
+									</p>
+								</div>
+								<span class="typed-bread"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- mosue button -->
+				<a href="#" class="mouse_btn" style="display: none;"><span class="icon fas fa-chevron-down"></span></a>
+
+			</div>
+
+			<!-- Section About -->
+			 
+			<div class="section about" id="section-about">
+				<div class="content content-box">
+					{% for resume in resume %}
+					<!-- image -->
+					<div class="image">
+						<img src="{{resume.image.url}}" alt="" />
+					</div>
+
+					<!-- desc -->
+					<div class="desc">
+						<p>{{resume.description}}</p>
+						<div class="info-list">
+							<ul>
+								<li><strong>Age:</strong> {{resume.age}}</li>
+								<li><strong>Residence:</strong> {{resume.residence}}</li>
+								<li><strong>Freelance:</strong> {{resume.developer}}</li>
+								<li><strong>Address:</strong> {{resume.address}}</li>
+								<li><strong>Phone:</strong>{{resume.phone_number}}</li>
+								<li><strong>E-mail:</strong> {{resume.email}}</li>
+							</ul>
+						</div>
+						<div class="bts">
+							<a href="{% static 'cv\Fotima-Ruziyeva-FlowCV-Resume-20240907 (3).pdf'%}" class="btn hover-animated">
+								<span class="circle"></span>
+								<span class="lnk">Download CV</span>
+							</a>
+						</div>
+					</div>
+
+					<div class="clear"></div>
+				</div>
+				{% endfor %}
+			</div>
+		
+
+			<!-- Section Service -->
+			<div class="section service" id="section-services">
+				<div class="content">
+
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Services</div>
+					</div>
+
+					<!-- service items -->
+					<div class="service-items">
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-code"></span></div>
+								<div class="name">Web Development</div>
+								<div class="text">Modern and mobile-ready website that will help you reach all of your marketing.</div>
+							</div>
+						</div>
+						
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-music"></span></div>
+								<div class="name">Music Writing</div>
+								<div class="text">Music copying, writing, creating, transcription, arranging and services.</div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fab fa-html5"></span></div>
+								<div class="name">HTML</div>
+								<div class="text">With HTML you can create your own Website.HTML is easy to learn - You will enjoy it!</div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fab fa-css3"></span></div>
+								<div class="name">CSS</div>
+								<div class="text">CSS is the language we use to style an HTML document.CSS describes how HTML elements should be displayed.This tutorial will teach you CSS from basic to advanced.</div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fab fa-js"></span></div>
+								<div class="name">JS</div>
+								<div class="text">JavaScript is the world's most popular programming language.JavaScript is the programming language of the Web.JavaScript is easy to learn.This tutorial will teach you JavaScript from basic to advanced.</div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fab fa-react"></span></div>
+								<div class="name">React.js</div>
+								<div class="text">React is a JavaScript library for building user interfaces.React is used to build single-page applications.React allows us to create reusable UI components.
+									
+									</div>
+							</div>
+							{% comment %}  {% endcomment %}
+							
+						</div>
+                    <!--   -->
+					
+					<!--  -->
+					
+
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			
+
+			<!-- Section Resume -->
+			
+			<!-- Section Design Skills -->
+			<div class="section skills" id="section-skills">
+				<div class="content">
+
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Developer Skills</div>
+					</div>
+
+					<!-- skills items -->
+					<div class="skills percent content-box">
+						<ul>
+							<li> 
+								<div class="name">HTML CSS</div>
+								<div class="progress ">
+									<div class="percentage" style="width: 95%;">
+										<span class="percent">95%</span>
+									</div>
+								</div>
+							</li>
+							<li> 
+								<div class="name">Python</div>
+								<div class="progress ">
+									<div class="percentage" style="width: 70%;">
+										<span class="percent">70%</span>
+									</div>
+								</div>
+							</li>
+							<li> 
+								<div class="name">Sass Bootsrap</div>
+								<div class="progress ">
+									<div class="percentage" style="width:80%;">
+										<span class="percent">80%</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="name">JS</div>
+								<div class="progress ">
+									<div class="percentage" style="width: 60%;">
+										<span class="percent">60%</span>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="name"> React JS</div>
+								<div class="progress ">
+									<div class="percentage" style="width: 30%;">
+										<span class="percent">30%</span>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Section Languages Skills -->
+			<div class="section skills" id="section-skills-lang">
+				<div class="content">
+
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Languages Skills</div>
+					</div>
+
+					<!-- skills items -->
+					<div class="skills dotted content-box">
+						<ul>
+							<li> 
+								<div class="name">O'zbek tili</div>
+								<div class="progress">
+									<div class="percentage" style="width: 100%;">
+										<span class="percent">100%</span>
+									</div>
+								</div>
+							</li>
+							
+							
+							
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Section Coding Skills -->
+			<div class="section skills" id="section-skills-code">
+				<div class="content">
+					
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Coding Skills</div>
+					</div>
+
+					<!-- skills items -->
+					<div class="skills circles content-box">
+						<ul>
+							<li> 
+								<div class="name">Python</div>
+								<div class="progress p70"> <!-- p90 = 90% circle fill color -->
+									<div class="percentage">
+										<span class="percent">70%</span>
+									</div>
+									<span>70%</span>
+								</div>
+							</li>
+							<li> 
+								<div class="name">Django</div>
+								<div class="progress p75"> <!-- p90 = 90% circle fill color -->
+									<div class="percentage">
+										<span class="percent">75%</span>
+									</div>
+									<span>75%</span>
+								</div>
+							</li>
+							
+							
+							<li> 
+								<div class="name">React/ JavaScript</div>
+								<div class="progress p55"> <!-- p85 = 85% circle fill color -->
+									<div class="percentage">
+										<span class="percent">55%</span>
+									</div>
+									<span>55%</span>
+								</div>
+							</li>
+							<li> 
+								<div class="name">HTML / CSS</div>
+								<div class="progress p95"> <!-- p95 = 95% circle fill color -->
+									<div class="percentage">
+										<span class="percent">95%</span>
+									</div>
+									<span>95%</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				
+
+			
+			
+
+		</div>
+		
+		{% endblock content %}

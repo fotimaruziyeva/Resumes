@@ -1,0 +1,168 @@
+
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<header class="header">
+	<div class="head-top">
+
+		<!-- menu button -->
+		<a href="#" class="menu-btn"><span></span></a>
+
+		<!-- logo -->
+		<div class="logo hover-masks-logo">
+			<a href="{% static 'cv\Fotima-Ruziyeva-FlowCV-Resume-20240907 (3).pdf'%}">
+				<span class="mask-lnk">Ruziyeva <strong>  Fotima</strong></span>
+				<span class="mask-lnk mask-lnk-hover">Download <strong>CV</strong></span>
+			</a>
+		</div>
+		
+		<!-- top menu -->						
+		<div class="top-menu hover-masks">
+			<div class="top-menu-nav">	
+				<div class="menu-topmenu-container">
+					<ul class="menu">
+						<li class="menu-item ">
+							<a href="{% url 'home-page'%}">Home</a>
+						</li>
+						<li class="menu-item">
+							<a href="{% url 'resume-page'%}">Resume</a>
+							
+						</li>
+						<li class="menu-item ">
+							<a href="{% url 'works-page'%}">Works</a>
+						</li>
+						<li class="menu-item  current-menu-item">
+							<a href="{% url 'contact-page'%}">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</header>
+		<!-- Wrapper -->
+		<div class="wrapper">
+
+			<!-- Section Started -->
+			<div class="section started section-title" id="section-started">
+
+				<!-- background -->
+				<div class="video-bg">
+					<div class="video-bg-mask"></div>
+					<div class="video-bg-texture" id="grained_container"></div>
+				</div>
+
+				<!-- started content -->
+				<div class="centrize full-width">
+					<div class="vertical-center">
+						<div class="started-content">
+							<h1 class="h-title">Contacts</h1>
+							<div class="h-subtitles">
+								<div class="h-subtitle typing-bread">
+									<p class="breadcrumbs">
+										<a href="{% url 'home-page'%}">Home</a> / Contacts
+									</p>
+								</div>
+								<span class="typed-bread"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- mosue button -->
+				<a href="#" class="mouse_btn" style="display: none;"><span class="icon fas fa-chevron-down"></span></a>
+
+			</div>
+
+			<!-- Section Contacts Info -->
+			<div class="section contacts" id="section-contacts-info">
+				<div class="content">
+
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Contacts Info</div>
+					</div>
+
+					<!-- contacts items -->
+					<div class="service-items">
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-phone"></span></div>
+								<div class="name">Phone</div>
+								<div class="text">+998 93 078 85 88</div>
+							</div>
+						</div>
+						
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-envelope"></span></div>
+								<div class="name">Email</div>
+								<div class="text"><a href="mailto:fotimabeautiful04@gmail.com">fotimabeautiful04@gmail.com</a></div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-map-marker-alt"></span></div>
+								<div class="name">Address</div>
+								<div class="text">Karmana tumani Narpay MFY Langar ko'chasi 312</div>
+							</div>
+						</div>
+
+						<div class="service-col">
+							<div class="service-item content-box">
+								<div class="icon"><span class="fas fa-user-tie"></span></div>
+								<div class="name">Full-Stack Developer</div>
+								<div class="text">I am an experienced Full-Stack Developer</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+				</div>
+			</div>
+
+			<!-- Section Contacts Form -->
+			<div class="section contacts" id="section-contacts">
+				<div class="content">
+
+					<!-- title -->
+					<div class="title">
+						<div class="title_inner">Contacts Form</div>
+					</div>
+
+					<!-- form -->
+					<div class="contact_form content-box">
+						<form action="{% url 'contact-page' %}"  method="post">
+							{% csrf_token %}
+							<div class="group-val">
+   								<input type="text" name="name" placeholder="Name" />
+							</div>
+							<div class="group-val">
+								<input type="email" name="email" placeholder="Email" />
+							</div>
+							<div class="group-val ct-gr">
+								<textarea name="content" placeholder="Message"></textarea>
+							</div>
+							<div class="group-bts">
+								<button type="submit" class="btn hover-animated">
+									<span class="circle"></span>
+									<span class="lnk">Send Message</span>
+								</button>
+							</div>
+						</form>
+						<div class="">
+							<p>Thanks, your message is sent successfully.</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="clear"></div>
+			</div>
+
+		</div>
+		
+		{% endblock content %}
